@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths</title>
+    <link rel="stylesheet" href="astronomy.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+	<nav class="nav-collapse" role="navigation">
+        <ul class="tabs primary-nav">
+            <li class="tabs__item">
+                <a href="home.html" class="tabs__link">Home</a>
+            </li>
+            <li class="tabs__item">
+                <a href="streammain.html" class="tabs__link">Streams</a>
+            </li>
+            
+            <li class="tabs__item">
+                <a href="about.html" class="tabs__link">About</a>
+            </li>
+            <li class="tabs__item">
+                <a href="contact.html" class="tabs__link">Contact Us</a>
+            </li>
+			<li class="tabs__item">
+                <a href="team.html" class="tabs__link">Our team</a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="card-list">
+	
+	<li class="card">
+		<a class="card-image" href="#" target="" style="background-image: url(https://i.pinimg.com/564x/b0/16/02/b0160214506c1e16240ccd98883d8a5b.jpg);" data-image-full="https://i.pinimg.com/564x/b0/16/02/b0160214506c1e16240ccd98883d8a5b.jpg">
+			<img src="https://i.pinimg.com/564x/b0/16/02/b0160214506c1e16240ccd98883d8a5b.jpg" alt="let's go" />
+		</a>
+		
+			<h2>Bsc in Mathematics</h2>
+		<a class="card-description" href="bscmaths.html" target=""><p>For more details</p></a>	
+		</a>
+	</li>
+	
+	<li class="card">
+		<a class="card-image" href="#" target="" style="background-image: url();" data-image-full="https://i.pinimg.com/236x/d9/13/fd/d913fdaa84038947a4194be16b19f4b8.jpg">
+			<img src="https://i.pinimg.com/236x/d9/13/fd/d913fdaa84038947a4194be16b19f4b8.jpg" alt="let's go" />
+		</a>
+		
+			<h2>Bsc in Statistic</h2>
+		<a class="card-description" href="bscstatic.html" target=""><p>For more details </p>
+		</a>
+	</li>
+	
+	
+</ul>
+<script type="text/javascript">
+    window.addEventListener('load', function() {
+	
+	// setTimeout to simulate the delay from a real page load
+	setTimeout(lazyLoad, 1000);
+	
+});
+
+function lazyLoad() {
+	var card_images = document.querySelectorAll('.card-image');
+	
+	// loop over each card image
+	card_images.forEach(function(card_image) {
+		var image_url = card_image.getAttribute('data-image-full');
+		var content_image = card_image.querySelector('img');
+		
+		// change the src of the content image to load the new high res photo
+		content_image.src = image_url;
+		
+		// listen for load event when the new photo is finished loading
+		content_image.addEventListener('load', function() {
+			// swap out the visible background image with the new fully downloaded photo
+			card_image.style.backgroundImage = 'url(' + image_url + ')';
+			// add a class to remove the blur filter to smoothly transition the image change
+			card_image.className = card_image.className + ' is-loaded';
+		});
+		
+	});
+	
+}
+
+
+</script>
+</body>
+</html>
